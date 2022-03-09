@@ -1,4 +1,4 @@
-# Vite 快速构建 Vue 项目
+# Vite 快速构建 Vue3 项目
 
 ## 项目选型
 
@@ -98,7 +98,15 @@ const router = createRouter({
 export default router
 ```
 
-C.挂载路由
+C.路由组件
+**App.vue**
+```vue
+<template>
+  <router-view />
+</template>
+```
+
+D.挂载路由
 **main.js**
 ```js
 import { createApp } from 'vue'
