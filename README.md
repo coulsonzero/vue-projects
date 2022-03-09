@@ -32,6 +32,9 @@ $ npm install -D sass
 ```
 
 ## 3.使用vue-router
+
+[Vue-Router](https://router.vuejs.org/zh/guide/#javascript)
+
 A. 导入vue-router
 ```sh
 # yarn remove vue-router
