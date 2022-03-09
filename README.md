@@ -67,7 +67,7 @@ $ yarn add vue-router@next -S
 ```
 
 B.创建router路由
-**src/router/index.js**
+**`src/router/index.js`**
 ```js
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -99,7 +99,7 @@ export default router
 ```
 
 C.路由组件
-**App.vue**
+**`App.vue`**
 ```vue
 <template>
   <router-view />
@@ -107,7 +107,7 @@ C.路由组件
 ```
 
 D.挂载路由
-**main.js**
+**`main.js`**
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -123,3 +123,10 @@ createApp(App).use(router).mount("#app");
 ```sh
 $ yarn add echarts
 ```
+
+## 5.安装lib-flexible
+
+```sh
+$ yarn add --save lib-flexible
+```
+
