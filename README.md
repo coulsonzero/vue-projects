@@ -1,9 +1,34 @@
 # Vite 快速构建 Vue 项目
 
+## 项目选型
+
+vue3 + vite + yarn + vue-router + echarts + nodejs + scss
+
+## yarn环境搭建
+
+1. 安装nodejs
+
+[Nodejs](https://nodejs.org/en/)
+
+
+```sh
+$ node -v
+```
+2.检查npm是否安装
+```sh
+$ npm -v
+```
+3.安装yarn
+```sh
+$ npm install -g yarn
+```
 
 ## 1.构建vue项目
 
+[Vite构建vue项目](https://v3.cn.vuejs.org/guide/installation.html#vite)
+
 Vite 是一个 web 开发构建工具，由于其原生 ES 模块导入方式，可以实现闪电般的冷服务器启动 (秒开!!)
+
 
 ```sh
 $ yarn create vite <project-name> --template vue
@@ -33,7 +58,7 @@ $ npm install -D sass
 
 ## 3.使用vue-router
 
-[Vue-Router](https://router.vuejs.org/zh/guide/#javascript)
+[Vue Router](https://router.vuejs.org/zh/guide/#javascript)
 
 A. 导入vue-router
 ```sh
@@ -84,6 +109,9 @@ createApp(App).use(router).mount("#app");
 ```
 
 ## 4.安装echarts
+
+[Apache ECharts 5.3](https://echarts.apache.org/zh/index.html)
+
 ```sh
 $ yarn add echarts
 ```
