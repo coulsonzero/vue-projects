@@ -2,6 +2,7 @@
     <header>
         <h1>{{ title }}</h1>
         <h6>{{ subTitle }}</h6>
+        <!-- 5.绑定到页面上 -->
         <div class="dateTime">{{ dateTime }}</div>
     </header>
 </template>
@@ -12,32 +13,51 @@ export default {
         return {
             title: '数据可视化-Echarts',
             subTitle: 'Platform operation and maintenance main data',
+            // 1.声明时间变量
             dateTime: ''
         }
     },
+    // 4[2]生命周期函数
+    created() {
+        this.setCurrentTime();
+    },
     // 常量：computed: {dateTime() {...}}
+    // 2.获取时间
     methods: {
         getDateTime() {
-            const d = new Date();
+            const d    = new Date();
             const year = d.getFullYear();
-            const month = d.getMonth()+1;
-            const day = d.getDate();
+            let  month = d.getMonth()+1;
+            let    day = d.getDate();
+            let  hours = d.getHours();
+            let   mins = d.getMinutes();
+            let   secs = d.getSeconds();
+
+            // 时间格式化
+            month = month < 10 ? `0${month}` : month;   // let 不可重复申明， const为常量，var可再次申明！
+            day   = day   < 10 ? `0${day}`   : day;
+            hours = hours < 10 ? `0${hours}` : hours;
+            mins  = mins  < 10 ? `0${mins}`  : mins;
+            secs  = secs  < 10 ? `0${secs}`  : secs;
             const date = `${year}-${month}-${day}`;
-            const hours = d.getHours();
-            let mins = d.getMinutes();
-            mins = mins < 10 ? `0${mins}` : mins; // let 不可重复申明， const为常量，var可再次申明！
-            let secs = d.getSeconds();
-            secs = secs < 10 ? `0${secs}` : secs;
             const time = `${hours}:${mins}:${secs}`;
             const dateTime = hours < 12 ? `${date} AM ${time}` : `${date} PM ${time}`;
+            // 3.与data中的变量绑定
             this.dateTime = dateTime
         },
+        // 4[2].间隔计算时间
+        setCurrentTime(){
+            setInterval(this.getDateTime, 1000)
+        }
     },
+    // 4[1].每隔1s计算时间
+    /*
     mounted() {
         setInterval(() => {
             this.getDateTime()
         }, 1000)
     }
+    */
 }
 
 
