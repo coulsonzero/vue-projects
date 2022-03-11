@@ -1,7 +1,24 @@
 # Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## QuickStart
 
-## Recommended IDE Setup
+```sh
+npm install
+# if you need `vue-router`:
+# yarn add vue-router@next -S
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+# if you need `vuex`:
+# yarn add vuex@next --save
+
+# if you need `scss`:
+# yarn add -D sass
+
+yarn dev
+```
+
+
+## Create a new vue3 vite project
+
+```
+yarn create vite <project-name> --template vue
+```
