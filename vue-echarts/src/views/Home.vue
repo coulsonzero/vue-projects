@@ -1,9 +1,13 @@
 <script>
 import Header from '../components/Header.vue'
+import TopLeftBox from '../components/TopLeftBox.vue'
+import TopRightBox from '../components/TopRightBox.vue'
 
 export default {
     components: {
         Header,
+        TopLeftBox,
+        TopRightBox,
     }
 }
 </script>
@@ -12,89 +16,12 @@ export default {
     <div class="home">
         <Header />
         <section class="container">
-        <div class="item i1">
-            <p>今日在线用户量</p>
-            <div class="peopleBg">
-                <div class="people"></div>
-                <div class="peopleNumber">113,000,000</div>
+            <div class="item i1">
+                <TopLeftBox />
             </div>
-        </div>
-        <div class="item i2">
-            <p>平台运行统计</p>
-            <div class="labelBox box1">
-                <div class='box'>
-                    <div class='labelName'>应用上架数</div>
-                    <div class="label">50322</div>
-                </div>
+            <div class="item i2">
+                <TopRightBox />
             </div>
-            <div class="labelBox box2">
-                <div class='box'>
-                    <div class='labelName'>租户量</div>
-                    <div class="label">50322</div>
-                </div>
-            </div>
-            <div class="labelBox box3">
-                <div class='box'>
-                    <div class='labelName'>服务商量</div>
-                    <div class="label">50322</div>
-                </div>
-            </div>
-            <div class="labelBox box4">
-                <div class='box'>
-                    <div class='labelName'>用户总量</div>
-                    <div class="label">50322</div>
-                </div>
-            </div>
-            <div class="labelBox box5">
-                <div class='box'>
-                    <div class='labelName'>总成交量</div>
-                    <div class="label">50322</div>
-                </div>
-            </div>
-            <div class="labelBox box6">
-                <div class='box'>
-                    <div class='labelName'>总订阅量</div>
-                    <div class="label">50322</div>
-                </div>
-            </div>
-            <div class="labelBox box7">
-                <div class='box'>
-                    <div class='labelName'>总访问量</div>
-                    <div class="label">50322</div>
-                </div>
-            </div>
-            <div class="labelBox box0">
-                <div class='box'>
-                    <div class='labelName'>应用总数</div>
-                    <div class="label">50322</div>
-                </div>
-            </div>
-        </div>
-        <div class="item i3">
-            <p>应用数量排名</p>
-            <div class="chart bar"></div>
-        </div>
-        <div class="item i4">
-            <p>平台访问量</p>
-            <div class="chart line1"></div>
-        </div>
-        <div class="item i5">
-            <p>成交类型分布情况</p>
-            <div class="chart pie1"></div>
-            <div class="loading"></div>
-        </div>
-        <div class="item i6">
-            <p>应用数量排名2</p>
-            <div class="chart radar"></div>
-        </div>
-        <div class="item i7">
-            <p>平台成交量</p>
-            <div class="chart line2"></div>
-        </div>
-        <div class="item i8">
-            <p>订阅类型分布情况</p>
-            <div class="chart pie2"></div>
-        </div>
     </section>
     </div>
 </template>
@@ -107,4 +34,36 @@ export default {
     min-height: 100vh;
 }
 
+/* 主体部分 */
+.container {
+    top: 70px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 460px 1fr 1fr 1fr;
+    grid-template-rows: 280px 345px 345px;
+    grid-template-areas:
+    "i1 i2 i2 i2"
+    "i3 i4 i4 i5"
+    "i6 i7 i7 i8";
+    row-gap: 10px;
+    column-gap: 15px;
+
+}
+.container .item {
+    position: relative;
+    margin-left: 17px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+.container .item:nth-child(1) {
+    background: url(../assets/images/box.png) no-repeat;
+    background-size: 100% 100%;
+    grid-area: i1;
+}
+.container .item:nth-child(2) {
+    background: url(../assets/images/labelBg.png) no-repeat;
+    background-size: 100% 100%;
+    grid-area: i2;
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
     <header>
-        <h1>{{ title }}</h1>
-        <h6>{{ subTitle }}</h6>
+        <div class="title">{{ title }}</div>
+        <div class="subTitle">{{ subTitle }}</div>
         <!-- 5.绑定到页面上 -->
         <div class="dateTime">{{ dateTime }}</div>
     </header>
@@ -63,51 +63,51 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
 header {
     position: relative;
     width: 100%;
     height: 100px;
-    background: url(../images/header.png) no-repeat;
+    background: url(../assets/images/header.png) no-repeat;
     background-size: 100% 100%;
-}
-header h1 {
-    position: absolute;
-    color: #fff;
-    font-size: 38px;
-    text-align: center;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'STXinwei';
-    letter-spacing: 6px;
-    text-shadow: 3px 3px 12px #00aeff,
-                 3px -3px 12px #00aeff,
-                 -3px -3px 12px #00aeff,
-                 -3px 3px 12px #00aeff;
-}
-header h6 {
-    position: absolute;
-    color: #fff;
-    font-size: 12px;
-    text-align: center;
-    top: 73%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    letter-spacing: 0.5px;
-    font-weight: 300;
-}
-header .dateTime {
-    position: absolute;
-    color: #fff;
-    font-size: 23px;
-    top: 17%;
-    padding-left: 30px;
-    letter-spacing: 2px;
-    text-shadow: 3px 3px 12px #00aeff,
-                 3px -3px 12px #00aeff,
-                 -3px -3px 12px #00aeff,
-                 -3px 3px 12px #00aeff;
+    .title {
+        position: absolute;
+        color: #fff;
+        font-size: 2.6rem;
+        text-align: center;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'STXinwei';
+        letter-spacing: 6px;
+        text-shadow: 3px 3px 12px #00aeff,
+                    3px -3px 12px #00aeff,
+                    -3px -3px 12px #00aeff,
+                    -3px 3px 12px #00aeff;
+    }
+    .subTitle {
+        position: absolute;
+        color: #fff;
+        font-size: 1.2rem;
+        text-align: center;
+        top: 73%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        letter-spacing: 0.5px;
+        font-weight: 300;
+    }
+    .dateTime {
+        position: absolute;
+        color: #fff;
+        font-size: 1.6rem;
+        top: 17%;
+        padding-left: 30px;
+        letter-spacing: 2px;
+        text-shadow: 3px 3px 12px #00aeff,
+                    3px -3px 12px #00aeff,
+                    -3px -3px 12px #00aeff,
+                    -3px 3px 12px #00aeff;
+    }
 }
 
 </style>

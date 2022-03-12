@@ -57,7 +57,9 @@ select,
 button {
   font: inherit;
 }
-html,
+html {
+  font-size: 62.5%;
+}
 body {
   height: 100%;
   -webkit-user-select: none;
