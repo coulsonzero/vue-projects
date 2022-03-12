@@ -29,7 +29,7 @@ export default {
     function setData() {
       // xData = data.data.chartData.chartData.map(v => v.day)
       // yData = data.data.chartData.chartData.map(v => v.seriesData);
-      xData = [...data.data.chartData.chartData.day];
+      xData = data.data.chartData.chartData.day;
       seriesData = data.data.chartData.chartData.seriesData;
 
       console.log("xData", xData);

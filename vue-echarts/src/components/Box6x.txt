@@ -1,0 +1,124 @@
+<template>
+  <div class="item i6">
+    <div class="title">{{ title }}</div>
+    <div class="chart radar" id="chartBox6"></div>
+  </div>
+</template>
+
+<script>
+// import { inject, onMounted } from "vue";
+
+export default {
+  data() {
+    return {
+      title: "应用数量排名2"
+    }
+  },
+  
+  setup() {
+    let $echarts = inject("echarts");
+    // 钩子函数
+    onMounted(() => {
+      let myChart6 = $echarts.init(document.getElementById("chartBox6"));
+
+       myChart6.setOption({
+        // backgroundColor: '#1b1d3d',
+        color: ['#1299FA', '#17FFFB'],
+        legend: {
+          // 图标样式
+          icon: "circle",
+          right: "5%",
+          // 图标文本整体排列方式
+          orient: "vertical",
+          // 图标与文本左对齐
+          align: "left",
+          // 图标大小
+          itemWidth: 8,
+          textStyle: {
+            color: "#fff",
+            fontSize: 13,
+          },
+        },
+        tooltip: {},
+        radar: {
+          // 位置居中
+          center: ["40%", "50%"],
+          // 缩小
+          // radius: '50%',
+          indicator: [
+            {
+              name: '安全消息',
+              max: 1000
+            },
+            {
+              name: '产品服务',
+              max: 1000
+            },
+            {
+              name: '账户信息',
+              max: 1000
+            },
+            {
+              name: '公告',
+              max: 1000
+            },
+            {
+              name: '订阅服务',
+              max: 1000
+            },
+            {
+              name: '其他',
+              max: 1000
+            }],
+          // 雷达线面积
+          splitArea: {
+            show: false,
+          },
+          // 雷达线数量
+          splitNumber: 5,
+          // 旋转雷达图
+          startAngle: 60,
+          // 网格线
+          splitLine: {
+            lineStyle: { color: "rgba(255,255,255,0.1" },
+          },
+          //轴线颜色
+          axisLine: {
+            lineStyle: { color: "rgba(255,255,255,0.1" },
+          },
+        },
+        series: [
+          {
+            name: "Budget vs spending",
+            type: "radar",
+            data: [{
+              value: [800, 600, 780, 560, 900, 480],
+              name: '累计成交',
+              // 面积样式
+              areaStyle: {
+                  color: 'rgba(18, 153, 250, 0.3)'
+              },
+            },
+            {
+                value: [460, 460, 580, 160, 420, 310],
+                name: '每日成交',
+                areaStyle: {
+                    color: 'rgba(24, 255, 252, 0.3)'
+                },
+                z: 1
+            }],
+            // 拐点大小
+            symbolSize: 5,
+          },
+        ],
+      })
+    });
+
+    return {};
+  },
+
+};
+</script>
+
+<style>
+</style>
