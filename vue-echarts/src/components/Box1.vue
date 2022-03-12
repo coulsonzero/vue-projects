@@ -1,6 +1,7 @@
 <template>
-  
+
   <div class="peopleBg">
+    <div>112131asdasd</div>
     <div class="people"></div>
     <div class="peopleNumber">{{ number }}</div>
   </div>
