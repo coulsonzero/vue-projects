@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 // 1. 定义路由组件
-import Sidebar from "../components/Sidebar.vue"
-import Hello from "../components/Hello.vue"
 import Home from '../views/Home.vue'
 
 // 2. 定义一些路由, 每个路由都需要映射到一个组件。
@@ -10,14 +8,6 @@ const routes = [
     {
         path: '/home',
         component: Home
-    },
-	{
-		path: "/app",
-		component: () => Sidebar
-	},
-    {
-        path: '/hello',
-        component: () => Hello
     },
     // 重定向
     {

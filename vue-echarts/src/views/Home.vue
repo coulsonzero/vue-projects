@@ -20,7 +20,7 @@ export default {
 <style lang="scss">
 .home {
   background: url("../assets/images/bg.png") no-repeat top center;
-  width: 100%;
+//   width: 100%;
   min-height: 100vh;
 }
 </style>

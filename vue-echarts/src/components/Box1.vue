@@ -1,9 +1,10 @@
 <template>
-
-  <div class="peopleBg">
-    <div>112131asdasd</div>
-    <div class="people"></div>
-    <div class="peopleNumber">{{ number }}</div>
+  <div class="item i1">
+    <div class="title">{{ title }}</div>
+    <div class="peopleBg">
+      <div class="people"></div>
+      <div class="peopleNumber">{{ number }}</div>
+    </div>
   </div>
 </template>
 
@@ -18,45 +19,42 @@ export default {
 };
 </script>
 
-<style>
-section .item p {
-  position: absolute;
-  padding: 0.3rem 2rem;
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.86);
-  font-family: "STXinwei";
-  text-shadow: 3px 3px 12px #00aeff, 3px -3px 12px #00aeff,
-    -3px -3px 12px #00aeff, -3px 3px 12px #00aeff;
-}
-
-/* item 1 */
-.container .item .peopleBg {
+<style lang="scss">
+.i1 {
   position: relative;
-  top: 70px;
-  height: 121px;
-  margin: 20px 10px;
-  background: url(../assets/images/peopleBg.png) no-repeat;
-  background-size: 100% 121px;
-}
-.container .item .peopleBg .people {
-  position: absolute;
-  left: 30px;
-  top: 26px;
-  width: 68px;
-  height: 68px;
-  background: url(../assets/images/people.png) no-repeat;
-}
-.container .item .peopleBg .peopleNumber {
-  position: absolute;
-  left: 100px;
-  top: 40px;
-  width: 268px;
-  height: 68px;
-  /* background-color: #000; */
-  color: #fff;
-  font-size: 36px;
-  letter-spacing: 5px;
-  vertical-align: middle;
-  text-align: center;
+  display: grid;
+  place-items: center;
+  p {
+    position: absolute;
+    top: 1.2rem;
+    left: 2rem;
+    padding: 0.5rem 2rem;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.86);
+    font-family: "STXinwei";
+    text-shadow: 3px 3px 12px #00aeff, 3px -3px 12px #00aeff,
+      -3px -3px 12px #00aeff, -3px 3px 12px #00aeff;
+  }
+  .peopleBg {
+    position: relative;
+    margin: 0 1rem;
+    padding: 2rem;
+    background: url(../assets/images/peopleBg.png) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .people {
+      width: 5rem;
+      height: 5rem;
+      background: url(../assets/images/people.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .peopleNumber {
+      color: #fff;
+      font-size: 2.6rem;
+      letter-spacing: .4rem;
+    }
+  }
 }
 </style>
