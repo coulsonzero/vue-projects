@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router';
+// import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 // 1. 定义路由组件
 import Home from '../views/Home.vue'
@@ -19,9 +20,10 @@ const routes = [
 
 // 3. 创建路由实例并传递 `routes` 配置
 const router = createRouter({
-    // history: createWebHistory(process.env.BASE_URL),
-    history: createWebHistory(),
-    routes
-})
+	// history: createWebHistory(process.env.BASE_URL),
+	// history: createWebHistory(),
+	history: createWebHashHistory(),
+	routes,
+});
 
 export default router

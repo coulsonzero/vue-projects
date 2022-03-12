@@ -155,6 +155,47 @@ export default {
 </script>
 ```
 
+**components/Box3.vue**
+
+```vue
+<script>
+import { inject, onMounted } from "vue";
+
+export default {
+  data() {
+    return {
+      title: "应用数量排名",
+    };
+  },
+  setup() {
+    let $echarts = inject("echarts");
+    // 钩子函数
+    onMounted(() => {
+      let myChart = $echarts.init(document.getElementById("chartBox3"));
+
+      myChart.setOption({
+        xAxis: {
+          type: "category",
+          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        },
+        yAxis: {
+          type: "value",
+        },
+        series: [
+          {
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: "bar",
+          },
+        ],
+      });
+    });
+
+    return {};
+  },
+};
+</script>
+```
+
 ## 5.安装lib-flexible
 
 ```sh
@@ -274,6 +315,15 @@ module.exports = router;
 const express = require("express");
 const app = express();
 
+// cors解决跨域
+/*
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Content-length, Authorization, Accept, X-Requested-With, yourHeaderFeild');
+    res.header('Access-Control-Allow-Methods', 'PUT, PUST, GET, DELECT, OPTIONS');
+    next();
+})
+*/
 
 /* ===== 1. http://localhost:3000/ ====== */
 /*

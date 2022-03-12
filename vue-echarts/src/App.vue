@@ -6,14 +6,17 @@
 
 <script>
 /* ==== 依赖注入 ==== */
-// 引用echarts
 import {provide} from "vue"
+// 引用echarts
 import * as echarts from "echarts"
 // 引用axios
 import axios from "axios"
+// 设置axios基准路径
+axios.defaults.baseURL = "http://localhost:8090"
 
 export default {
     setup() {
+      // 全局注入
       provide("echarts", echarts)
       provide("axios", axios)
     }
