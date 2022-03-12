@@ -1,7 +1,6 @@
 <template>
-  <p>{{title}}</p>
   <!-- :class   不可用index-->
-  <div v-for="item in items" :key="item.id" :class="text + item.id">
+  <div v-for="(item, index) in items" :key="index" :class="text + item.id">
     <div class='box'>
         <div class='labelName'>{{item.name}}</div>
         <div class="label">{{item.value}}</div>

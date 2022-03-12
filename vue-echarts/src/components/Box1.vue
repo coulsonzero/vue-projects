@@ -1,5 +1,5 @@
 <template>
-  <p>{{ title }}</p>
+  
   <div class="peopleBg">
     <div class="people"></div>
     <div class="peopleNumber">{{ number }}</div>
@@ -20,8 +20,8 @@ export default {
 <style>
 section .item p {
   position: absolute;
-  padding: 13px 20px;
-  font-size: 24px;
+  padding: 0.3rem 2rem;
+  font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.86);
   font-family: "STXinwei";
   text-shadow: 3px 3px 12px #00aeff, 3px -3px 12px #00aeff,

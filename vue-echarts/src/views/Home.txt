@@ -1,0 +1,130 @@
+<script>
+import Header from "../components/Header.vue";
+import TopLeftBox from "../components/TopLeftBox.vue";
+import TopRightBox from "../components/TopRightBox.vue";
+
+export default {
+
+  components: {
+    Header,
+    TopLeftBox,
+    TopRightBox,
+  },
+};
+</script>
+
+<template>
+  <div class="home">
+    <Header />
+    <section class="container">
+      <div class="item i1">
+        
+        <TopLeftBox />
+      </div>
+      <div class="item i2">
+        <TopRightBox />
+      </div>
+      <div class="item i3">
+        <p>应用数量排名</p>
+        <div class="chart bar"></div>
+      </div>
+      <div class="item i4">
+        <p>平台访问量</p>
+        <div class="chart line1"></div>
+      </div>
+      <div class="item i5">
+        <p>成交类型分布情况</p>
+        <div class="chart pie1"></div>
+        <div class="loading"></div>
+      </div>
+      <div class="item i6">
+        <p>应用数量排名2</p>
+        <div class="chart radar"></div>
+      </div>
+      <div class="item i7">
+        <p>平台成交量</p>
+        <div class="chart line2"></div>
+      </div>
+      <div class="item i8">
+        <p>订阅类型分布情况</p>
+        <div class="chart pie2"></div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<style lang="scss">
+.home {
+  background: url("../assets/images/bg.png") no-repeat top center;
+  line-height: 1.15;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 主体部分 */
+.container {
+  // width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: 280px 345px 345px;
+  grid-template-areas:
+    "i1 i2 i2 i2"
+    "i3 i4 i4 i5"
+    "i6 i7 i7 i8";
+  // row-gap: 10px;
+  // column-gap: 15px;
+
+  .item {
+    position: relative;
+    margin: 0 2rem;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+  }
+  .item:nth-child(1) {
+    background: url(../assets/images/box.png) no-repeat;
+    background-size: 100% 100%;
+    grid-area: i1;
+  }
+  .item:nth-child(2) {
+    background: url(../assets/images/labelBg.png) no-repeat;
+    background-size: 100% 100%;
+    grid-area: i2;
+  }
+  .item:nth-child(3) {
+    background: url(../assets/images/box.png) no-repeat;
+    background-size: 100% 100%;
+    grid-area: i3;
+  }
+
+  .item:nth-child(4) {
+    background: url(../assets/images/bigBox.png) no-repeat;
+    background-size: 100% 100%;
+    grid-area: i4;
+  }
+
+  .item:nth-child(5) {
+    background: url(../assets/images/box.png) no-repeat;
+    background-size: 100% 100%;
+    grid-area: i5;
+  }
+
+  .item:nth-child(6) {
+    background: url(../assets/images/box.png) no-repeat;
+    background-size: 100% 100%;
+    grid-area: i6;
+  }
+
+  .item:nth-child(7) {
+    background: url(../assets/images/bigBox.png) no-repeat;
+    background-size: 100% 100%;
+    grid-area: i7;
+  }
+
+  .item:nth-child(8) {
+    background: url(../assets/images/box.png) no-repeat;
+    background-size: 100% 100%;
+    grid-area: i8;
+  }
+}
+</style>
