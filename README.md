@@ -124,9 +124,181 @@ createApp(App).use(router).mount("#app");
 $ yarn add echarts
 ```
 
+**App.vue**
+
+```vue
+<script>
+// 引用echarts
+import {provide} from "vue"
+import * as echarts from "echarts"
+
+export default {
+    setup() {
+      provide("echarts", echarts)
+    }
+}
+</script>
+```
+
+**Home.vue**
+
+```vue
+<script>
+import {inject} from "vue"
+
+export default {
+    setup() {
+      let $echarts = inject("echarts")
+      console.log($echarts)
+    }
+}
+</script>
+```
+
 ## 5.安装lib-flexible
 
 ```sh
 $ yarn add --save lib-flexible
 ```
 
+
+## 6.express配置api接口
+```sh
+$ npm install express --save
+```
+
+```sh
+$ mkdir serve
+
+$ tree
+.
+├── index.js
+├── package.json
+└── router
+    └── test.js
+```
+### 6.1 配置基础express的api接口
+**index.js**
+
+```js
+var express = require("express");
+var app = express();
+
+app.get("/", (req, res) => {
+ res.send("hello express");
+});
+
+app.listen(3000);
+```
+
+```sh
+$ node index.js
+```
+
+### 6.2 配置express路由api接口
+```js
+const express = require("express");
+const router = express.Router();
+
+router.get("/data", function (req, res) {
+ res.send({msg: "hello test"});
+});
+
+module.exports = router;
+
+```
+
+```js
+const express = require("express");
+const app = express();
+
+
+/* ===== 1. http://localhost:3000/ ====== */
+/*
+app.get("/", (req, res) => {
+ res.send("hello express");
+});
+
+app.listen(3000);
+console.log("listen on http://localhost:3000")
+*/
+
+/* ======== 2，配置路由接口 ======= */
+const Test = require("./router/test");
+app.use("/test", Test);
+
+
+app.listen(3080)
+console.log("listen on http://localhost:3080/test/data")
+```
+
+```sh
+$ cd serve
+$ node index.js
+```
+
+
+### 6.3 引用json
+
+**mock/test.json**
+```json
+{
+    "chartData": {
+        "day": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "seriesData": [
+            [60, 280, 50, 193, 390, 330, 220],
+            [120, 232, 101, 334, 290, 330, 320]
+        ]
+    }
+}
+```
+
+**router/jsonTest.js**
+```js
+const express = require("express");
+const router = express.Router();
+
+// 引用json
+let testData = require("../mock/test.json");
+
+router.get("/data", function (req, res) {
+    // 输出json
+ res.send({msg: "hello test", chartData: testData});
+});
+
+module.exports = router;
+```
+
+**index.js**
+```js
+const express = require("express");
+const app = express();
+
+
+/* ===== 1. http://localhost:3000/ ====== */
+/*
+app.get("/", (req, res) => {
+ res.send("hello express");
+});
+
+app.listen(3000);
+console.log("listen on http://localhost:3000")
+*/
+
+/* ======== 2，配置路由接口 ======= */
+/*
+const Test = require("./router/test");
+app.use("/test", Test);
+
+app.listen(3080)
+console.log("listen on http://localhost:3080/test/data")
+*/
+
+
+/* ========== 3.配置json引用接口 ========= */
+const Test = require("./router/jsonTest");
+app.use("/jsonTest", Test);
+
+app.listen(3080);
+console.log("listen on http://localhost:3080/jsonTest/data");
+```

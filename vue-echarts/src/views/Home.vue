@@ -9,10 +9,17 @@
 import Header from '../components/Header.vue'
 import Container from './Container.vue'
 
+import {inject} from "vue"
 export default {
     components: {
         Header,
         Container
+    },
+    setup() {
+      let $echarts = inject("echarts")
+      let $http = inject("axios")
+      console.log($echarts)
+      console.log($http)
     }
 }
 </script>

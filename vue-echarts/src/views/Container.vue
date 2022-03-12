@@ -32,7 +32,7 @@ export default {
     Box6,
     Box7,
     Box8
-  }
+  },
 };
 </script>
 

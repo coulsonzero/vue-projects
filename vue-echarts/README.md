@@ -13,6 +13,12 @@ npm install
 # if you need `scss`:
 # yarn add -D sass
 
+# if you need Echarts
+# yarn add echarts
+
+# axios
+# yarn add axios
+
 yarn dev
 ```
 
