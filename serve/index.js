@@ -33,16 +33,18 @@ console.log("listen on http://localhost:3080/jsonTest/data");
 
 /* =============== 4.cors跨域 ==================== */
 // cors解决跨域
-/*
+
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Content-length, Authorization, Accept, X-Requested-With, yourHeaderFeild');
     res.header('Access-Control-Allow-Methods', 'PUT, PUST, GET, DELECT, OPTIONS');
     next();
 })
-*/
-const Test = require("./router/bar");
-app.use("/api", Test);
+
+// 访问的router文件
+const Test = require("./router/reactData");
+app.use("/", Test);
 
 app.listen(8080);
-console.log("listen on http://localhost:8080/api/bar");
+// url
+console.log("listen on http://localhost:8080/data");

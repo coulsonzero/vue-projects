@@ -9,4 +9,5 @@ router.get("/data", function (req, res) {
 	res.send({msg: "hello test", chartData: testData});
 });
 
+
 module.exports = router;
