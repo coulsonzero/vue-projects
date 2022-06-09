@@ -47,6 +47,9 @@ export default {
   },
   mounted() {
     console.log("mounted");
+    this.$nextTick(function () {
+      // 仅在整个视图都被渲染之后才会运行的代码
+    })
   },
   // 每次更新时
   beforeUpdate() {
@@ -54,6 +57,9 @@ export default {
   },
   update() {
     console.log("update");
+    this.$nextTick(function () {
+      // 仅在整个视图都被重新渲染完毕之后才会运行的代码
+    })
   },
   // DOM 卸载之前
   beforeUnmount() {
